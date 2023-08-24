@@ -1,0 +1,1 @@
+<a href="{{route('users.create')}}">Novo Usuário</a>

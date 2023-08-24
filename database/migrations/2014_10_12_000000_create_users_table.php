@@ -11,14 +11,22 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('iniciais');
-            $table->string('email')->unique();
+            $table->string('iniciais', 10)->unique();
+            $table->string('email_institucional')->unique();
+            $table->string('curriculo_lattes')->nullable();
+            $table->string('curriculo_web')->nullable();
+            $table->date('nascimento');
+            $table->string('nacionalidade')->nullable();
+            $table->string('naturalidade')->nullable();
+            $table->enum('estado_civil', ['Solteiro(a)', 'Casado(a)', 'Divorciado(a)', 'Separado(a)', 'União Estável', 'Viúvo(a)'])->default('Solteiro(a)');
+            $table->string('ramal', 4);
+            $table->string('tipo_sanguineo', 10);
+            $table->string('alergias');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
-            $table->dropSoftDeletes();
         });
     }
 
