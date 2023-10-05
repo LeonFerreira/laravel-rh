@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\EstadoCivil;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +19,7 @@ return new class extends Migration
             $table->date('nascimento');
             $table->string('nacionalidade')->nullable();
             $table->string('naturalidade')->nullable();
-            $table->enum('estado_civil', ['Solteiro(a)', 'Casado(a)', 'Divorciado(a)', 'Separado(a)', 'União Estável', 'Viúvo(a)'])->default('Solteiro(a)');
+            $table->enum('estado_civil', EstadoCivil::getValues())->default(EstadoCivil::DEFAULT);
             $table->string('ramal', 4);
             $table->string('tipo_sanguineo', 10);
             $table->string('alergias');
