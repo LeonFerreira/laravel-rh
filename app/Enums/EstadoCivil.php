@@ -6,7 +6,7 @@ use BenSampo\Enum\Enum;
 
 final class EstadoCivil extends Enum
 {
-    const DEFAULT = 'SOLTEIRO';
+    const DEFAULT = 'SOLTEIROOOOOOOOOOOOO';
 
     #[Description('Solteiro(a)')]
     const SOLTEIRO = 'SOLTEIRO';
